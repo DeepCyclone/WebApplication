@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{mainpage.title}"></title>
+</head>
+<body style="display:flex;flex-direction: column;width: 250px">
+    <span th:text = "#{mainpage.changeLanguage}"></span>
+    <select id="locales">
+        <option value="ru" th:text="#{mainpage.russianLanguage}" onclick="changeLanguage(this)"></option>
+        <option value="en" th:text="#{mainpage.englishLanguage}" onclick="changeLanguage(this)"></option>
+    </select>
+            <label for="action_button" th:text="#{mainpage.label}"></label>
+            <button id = "action_button" th:text="#{mainpage.button}" onclick="document.getElementById('msgArea').style.visibility = 'visible'"></button>
+            <i1 id = "msgArea" style="visibility:hidden" th:text="#{mainpage.message}"></i1>
+</body>
+</html>
+<script>
+    function changeLanguage(el){
+        window.location.replace("?lang="+el.value)
+    }
+</script>
